@@ -1,0 +1,116 @@
+ul{
+	list-style: none;
+
+}
+ul li.todo-done span{
+	color: grey;
+	text-decoration: line-through;
+}
+
+body{
+	font-size: 15px;
+	width: 70%;
+	margin: 0 auto;
+}
+.paper {
+  background: #fff;
+  box-shadow:
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #eee,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #eee,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
+    border: 1px solid lightgrey;
+}
+
+.checkbox-round 
+/*input[type='checkbox']:before*/{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    top: 3px;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    content: " ";
+}
+/*
+.checkbox-round:checked*/
+
+input[type='checkbox']:checked:before {
+    content: "✓";
+    position: relative;
+    left: 3px;
+    color: green;
+}
+div span{
+	margin-left: 15px;
+}
+
+.list-name{
+	padding: 20px;
+	font-size: 15px;
+	border: none;
+	border-radius: 0;
+}
+.mark-all{
+	border: none;
+	border-radius: 0;
+}
+.row2{ 
+	padding: 10px 0 10px 0px; 
+	border: none;
+}
+.row2 div{
+	display: inline-block;
+}
+.row2 div input{
+	width: 90%;
+	font-size: 15px;
+	border: none;
+}
+.list-group{
+	border-radius: 0;
+}
+.down-line{
+	border-bottom: 1px solid lightgrey;
+}
+.list-group{
+	border-radius: none;
+	border: none;
+}
+.row4{
+	padding-top: -5px;
+	padding-bottom: 50px;
+	margin: 0;
+}
+
+#todoList li button{
+	border:none;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+}
+#todoList li:hover button{
+	color: #cc9a9a;
+}
+
+#todoList li button:hover{
+	background: transparent;
+	color: #c25353;
+}
+
+.list-group {
+	border: none;
+}
+.mark-all-selected{
+	color: lightgrey;
+}
