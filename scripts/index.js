@@ -43,25 +43,24 @@ markAllCompleted.onclick = function() {
 
     if (activeTodos == 0) {
         todos.forEach(function(todo) {
-            var li = document.querySelector("li[todo-index='" + todo.index + "']");
-            var checkbox = li.querySelector("input");
-
-            todo.isDone = false;
-            checkbox.checked = false;
-            li.setAttribute("class", "")
+            changeTodoStatus(todo, "" , false);
         });
     } else {
         todos.forEach(function(todo) {
-            var li = document.querySelector("li[todo-index='" + todo.index + "']");
-            var checkbox = li.querySelector("input");
-
-            todo.isDone = true;
-            checkbox.checked = true;
-            li.setAttribute("class", "todo-done")
+            changeTodoStatus(todo, "todo-done" , true);
         });
     }
 
     countActiveTodos();
+}
+
+function changeTodoStatus(todo, liClass, todoState){
+        var li = document.querySelector("li[todo-index='" + todo.index + "']");
+        var checkbox = li.querySelector("input");
+        
+        todo.isDone = todoState;
+        checkbox.checked = todoState;
+        li.setAttribute("class", "list-group-item" + liClass);
 }
 
 function renderTodos() {
@@ -86,10 +85,10 @@ function renderTodos() {
             todo = todos[todo];
 
             if (e.path[0].checked) {
-                li.setAttribute("class", "todo-done");
+                li.setAttribute("class", "list-group-item todo-done");
                 todo.isDone = true;
             } else {
-                li.setAttribute("class", "");
+                li.setAttribute("class", "list-group-item");
                 todo.isDone = false;
             }
             countActiveTodos();

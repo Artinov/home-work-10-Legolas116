@@ -6,3 +6,7 @@ ul li.todo-done {
     color: gray;
     text-decoration: line-through;
 }
+
+.vi {
+	margin-top: 20px;
+}
