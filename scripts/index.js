@@ -21,6 +21,7 @@ inputText.onkeypress = function(e) {
             isDone: false,
             index: todoIndexValue
         });
+        updateLocalStorage();
         inputText.value = "";
         renderTodos(globalTodoFilter);
         countActiveTodos();
@@ -37,7 +38,8 @@ clearCompleted.onclick = function() {
 
     todos = todos.filter(function(todo){
         return todo.isDone == false;
-    });   
+    });
+        updateLocalStorage();
 }
 
 markAllCompleted.onclick = function() {
@@ -65,13 +67,14 @@ function changeTodoStatus(todo, liClass, todoState){
         todo.isDone = todoState;
         checkbox.checked = todoState;
         li.setAttribute("class", "list-group-item" + liClass);
+        updateLocalStorage();
 }
 
 showActive.onclick = function(){
     renderTodos(false);
 }
 
-showActive.onclick = function(){
+showAll.onclick = function(){
     renderTodos(null);
 }
 
@@ -130,6 +133,7 @@ function renderTodos(todoFilter) {
                 todo.isDone = false;
             }
             countActiveTodos();
+            updateLocalStorage();
         }
         todoElementTemplate.querySelector("button").onclick = function(e) {
             var li = e.path[1];
@@ -143,6 +147,7 @@ function renderTodos(todoFilter) {
 
             todosList.removeChild(li);
             countActiveTodos();
+            updateLocalStorage();
         }
         todosList.appendChild(todoElementTemplate);
     });
